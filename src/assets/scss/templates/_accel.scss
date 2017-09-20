@@ -14,13 +14,38 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 800;
+  font-weight: 700;
+  letter-spacing: -5px;
+}
+
+// Links
+
+a {
+  transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 // Colors
 
 $gold: #FFC300;
 $white: #FFFFFF;
+$blue: #01A0BA;
+
+// Title Bar
+
+.top-bar .top-bar-title a {
+  display: flex;
+  padding: 2rem 2rem 2rem 4rem;
+  align-items: center;
+}
+.top-bar .top-bar-title a svg {
+  width: 200px;
+}
+.top-bar .top-bar-title a p {
+  margin-bottom: 0;
+  margin-left: 3rem;
+  color: #fff;
+  font-style: italic;
+}
 
 // Top Bar
 
@@ -31,12 +56,39 @@ $white: #FFFFFF;
 .top-bar .menu li:not(:last-child) {
   border-right: none;
 }
+.top-bar .menu a {
+  color: #fff;
+  font-size: 1rem;
+}
+.top-bar .top-bar-right {
+  margin-right: 5rem;
+}
+.top-bar .menu a:hover:not(.button) {
+  background-color: transparent;
+  color: $gold;
+}
+.top-bar .menu > li:not(.menu-text) > a {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 
 // Featured Hero
 
 .featured-hero {
   overflow-y: hidden;
+  position: relative;
 }
+.bg-lines {
+  background: url('../images/lines.svg');
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+}
+
 .featured-hero,
 .featured-hero .row {
   min-height: 100vh;
@@ -46,14 +98,33 @@ $white: #FFFFFF;
   line-height: 1;
   font-size: 6.5rem;
 }
+.featured-hero-wrap {
+  position: relative;
+  z-index: 2;
+}
 .featured-hero-wrap .entry-content {
   text-align: center;
-  position: relative;
-  bottom: -3rem;
 }
 .featured-hero-wrap .entry-content h1:first-of-type {
   color: $gold;
 }
 .featured-hero-wrap .entry-content h1:last-of-type {
   color: $white;
+}
+
+// Secondary Nav
+
+.secondary-nav {
+  background-color: $blue;
+  padding: 2rem 0;
+}
+.secondary-nav .top-bar .top-bar-title a {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+// Footer
+
+.footer-container {
+  border-top: none;
 }
