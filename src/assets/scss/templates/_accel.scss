@@ -1,0 +1,59 @@
+// Typography
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-family: 'Open Sans'
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+}
+
+// Colors
+
+$gold: #FFC300;
+$white: #FFFFFF;
+
+// Top Bar
+
+.top-bar,
+.top-bar ul {
+  background-color: transparent;
+}
+.top-bar .menu li:not(:last-child) {
+  border-right: none;
+}
+
+// Featured Hero
+
+.featured-hero {
+  overflow-y: hidden;
+}
+.featured-hero,
+.featured-hero .row {
+  min-height: 100vh;
+}
+.featured-hero h1 {
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 6.5rem;
+}
+.featured-hero-wrap .entry-content {
+  text-align: center;
+  position: relative;
+  bottom: -3rem;
+}
+.featured-hero-wrap .entry-content h1:first-of-type {
+  color: $gold;
+}
+.featured-hero-wrap .entry-content h1:last-of-type {
+  color: $white;
+}
