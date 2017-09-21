@@ -53,7 +53,7 @@ if ( has_post_thumbnail( $post->ID ) ) : ?>
 						</div>
 					</div>
 					<div class="small-12 column align-self-bottom">
-						<img data-interchange="[<?php echo $hero_image['sizes']['fp-small']; ?>, small], [<?php echo $hero_image['sizes']['fp-medium']; ?>, medium], [<?php echo $hero_image['sizes']['fp-large']; ?>, large], [<?php echo $hero_image['sizes']['fp-xlarge']; ?>, xlarge]" src="<?php echo $hero_image['url']; ?>" alt="<?php echo $hero_image['alt']; ?>" class="grouped-sandbags"/>
+						<img data-interchange="[<?php echo $hero_image['sizes']['fp-small']; ?>, small], [<?php echo $hero_image['sizes']['fp-medium']; ?>, medium], [<?php echo $hero_image['sizes']['fp-large']; ?>, large], [<?php echo $hero_image['sizes']['fp-xlarge']; ?>, xlarge]" alt="<?php echo $hero_image['alt']; ?>" class="grouped-sandbags"/>
 					</div>
 				</div>
 			</article>

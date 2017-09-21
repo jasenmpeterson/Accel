@@ -1,8 +1,30 @@
 <?php
+
 /*
 Template Name: Full Width
 */
-get_header(); ?>
+
+get_header();
+
+// Variables
+
+// Page ID
+
+$current_page = sanitize_post($GLOBALS['wp_the_query']->get_queried_object());
+
+$page_id = $current_page->ID;
+
+// About Flexible Content
+
+$about_section = get_field('about', $page_id);
+
+// Applications
+
+$applications_title = get_field('applications_title', $page_id);
+$applications = get_field('applications', $page_id);
+$applications_background = get_field('applications_background', $page_id);
+
+?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>
 
@@ -28,12 +50,74 @@ get_header(); ?>
 
 <div class="main-wrap full-width" role="main">
 
-
 <?php do_action( 'foundationpress_before_content' ); ?>
 
+	<?php
+	foreach ($about_section as $about):
+		?>
+
+		<div class="row align-middle">
+			<div class="small-12 medium-6 columns">
+				<img data-interchange="[<?php echo $about['about_image']['sizes']['fp-small']; ?>, small], [<?php echo $about['about_image']['sizes']['fp-medium']; ?>, medium], [<?php echo $about['about_image']['sizes']['fp-large']; ?>, large], [<?php echo $about['about_image']['sizes']['fp-xlarge']; ?>, xlarge]"  alt="<?php echo $about['about_image']['alt']; ?>"/>
+			</div>
+			<div class="small-12 medium-6 large-5 columns">
+				<?php echo $about['content']; ?>
+				 <?php
+					if ($about['specifications']):
+						if($about['specifications']['header']) {
+							echo '<table>';
+								echo '<thead>';
+									echo '<tr>';
+										foreach($about['specifications']['header'] as $th):
+											echo '<th>';
+												echo $th['c'];
+											echo '</th>';
+										endforeach;
+									echo '</tr>';
+								echo '</thead>';
+								echo '<tbody>';
+									foreach($about['specifications']['body'] as $tr):
+										echo '<tr>';
+											foreach($tr as $td):
+												echo '<td>';
+													echo $td['c'];
+												echo '</td>';
+											endforeach;
+										echo '</tr>';
+									endforeach;
+								echo '</tbody>';
+							echo '</table>';
+						}
+					endif;
+				 ?>
+				<a class="data-sheet-button-container" href="<?php echo $about['data_sheet']; ?>">
+					<div><img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/icons/data_sheet_icon.svg" alt=""></div>
+					<div class="data-sheet-button">Download Technical Data Sheet</div>
+				</a>
+			</div>
+		</div>
+
+		<?php
+	endforeach;
+	?>
 
 <?php do_action( 'foundationpress_after_content' ); ?>
 
 </div>
+
+	<div class="applications" data-interchange="[<?php echo $applications_background ?>, small], [<?php echo $applications_background; ?>, medium], [<?php echo $applications_background; ?>, large], [<?php echo $applications_background; ?>, xlarge]">
+		<div class="row align-center">
+			<div class="small-12 medium-8 column">
+				<h6><?php echo $applications_title; ?></h6>
+				<div class="applications-wrap">
+					<?php
+					foreach($applications as $application):
+						echo '<p>'.$application['label'].'</p>';
+					endforeach;
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
 
 <?php get_footer();
