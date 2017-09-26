@@ -107,12 +107,12 @@ a {
 .secondary-nav {
   background-color: $blue;
   padding: 2rem 0;
+  transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .secondary-nav .top-bar .top-bar-title a {
   padding-top: 0;
   padding-bottom: 0;
 }
-
 // Main Wrap
 
 .main-wrap h2 {
@@ -212,6 +212,12 @@ table thead th {
   width: 70rem;
   margin: 0 auto;
   max-width: 100%;
+  color: $medium-black;
+  padding: 6rem 0;
+}
+.how-it-works .section-title {
+  color: $dark-blue;
+  margin-bottom: 6rem;
 }
 .how-it-works .row .row {
   margin: 0;
@@ -230,6 +236,10 @@ table thead th {
 }
 .tools-needed p {
   text-transform: uppercase;
+}
+.steps {
+  padding-right: 0;
+  padding-left: 1.875rem;
 }
 .step {
   position: relative;
@@ -251,7 +261,7 @@ table thead th {
   height: 2px;
   left: -1.5rem;
   top: 0;
-  background-color: #000;
+  background-color: #58595B;
 }
 .steps .step:nth-of-type(3):after {
   content: '';
@@ -261,7 +271,7 @@ table thead th {
   height: 2px;
   left: -1.5rem;
   bottom: 0;
-  background-color: #000;
+  background-color: #58595B;
 }
 .steps .step:nth-of-type(1):before,
 .steps .step:nth-of-type(2):before,
@@ -269,7 +279,7 @@ table thead th {
    content: '';
    width: 2px;
    height: 100%;
-   background-color: #000;
+   background-color: #58595B;
    display: block;
    left: -1.5rem;
    position: absolute;
@@ -278,7 +288,7 @@ table thead th {
   content: '';
   width: 2px;
   height: 100%;
-  background-color: #000;
+  background-color: #58595B;
   display: block;
   left: -1.5rem;
   position: absolute;
@@ -297,7 +307,7 @@ table thead th {
   height: 2px;
   left: -1.5rem;
   top: 0;
-  background-color: #000;
+  background-color: #58595B;
 }
 .steps .step:nth-of-type(6):after {
   content: '';
@@ -307,7 +317,7 @@ table thead th {
   height: 2px;
   left: -1.5rem;
   bottom: 0;
-  background-color: #000;
+  background-color: #58595B;
 }
 .step .box {
   display: flex;
@@ -318,14 +328,66 @@ table thead th {
   border-radius:50%;
   width: 2rem;
   height: 2rem;
-  background-color: #ccc;
-  display: flex;
+  background-color: #58595B;
+  color: #fff;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
+  position: relative;
+  right: -1rem;
+  z-index: 2;
+  font-weight: 700;
+  text-shadow: 2px 2px #000000;
 }
 .step .count span {
   display: block;
+}
+.step img {
+  width: 100px;
+}
+.step .box div.set-flex  {
+  display: inline-flex;
+  align-items: center;
+  width: 90%;
+}
+.step .box div.set-flex div {
+  margin-left: 1rem;
+}
+.tools-needed {
+  text-align: center;
+}
+.tools-needed img {
+  height: 90px;
+}
+.preparation-steps {
+  margin-bottom: 1rem;
+}
+.preparation-steps img {
+  width: 100px;
+}
+.preparation-steps div {
+  display: inline-block;
+  margin-left: 1rem
+}
+.preparation-steps-title {
+  margin-top: 5rem;
+}
+.comparison-table {
+  padding: 6rem 0;
+  width: 70rem;
+  margin: 0 auto;
+  max-width: 100%;
+}
+.comparison-table h6 {
+  color: $dark-blue;
+  margin-bottom: 6rem;
+}
+.comparison-table th {
+  color: #5D5D5D;
+}
+.comparison-table td {
+  color: #747474;
+  font-size: .9rem;
 }
 // Footer
 

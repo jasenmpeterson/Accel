@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 40);
+/******/ 	return __webpack_require__(__webpack_require__.s = 41);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -4621,6 +4621,8 @@ var _whatInput2 = _interopRequireDefault(_whatInput);
 var _foundationSites = __webpack_require__(20);
 
 var _foundationSites2 = _interopRequireDefault(_foundationSites);
+
+__webpack_require__(40);
 
 __webpack_require__(39);
 
@@ -12421,6 +12423,35 @@ var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+(0, _jquery2.default)(document).ready(function () {
+
+  (0, _jquery2.default)(function () {
+    // Check the initial Poistion of the Sticky Header
+    var stickyHeaderTop = (0, _jquery2.default)('.secondary-nav').offset().top;
+
+    (0, _jquery2.default)(window).scroll(function () {
+      if ((0, _jquery2.default)(window).scrollTop() > stickyHeaderTop) {
+        (0, _jquery2.default)('.secondary-nav').css({ position: 'fixed', top: '0px', width: '100%', zIndex: '10' });
+      } else {
+        (0, _jquery2.default)('.secondary-nav').css({ position: 'static', top: '0px' });
+      }
+    });
+  });
+});
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 _jquery2.default.ajax({
   dataType: 'jsonp',
   url: 'https://api.github.com/repos/olefredrik/foundationpress?callback=foundationpressGithub&access_token=ed6229228dbc763038dbf1e68d0d8a4a0935b38a',
@@ -12433,7 +12464,7 @@ _jquery2.default.ajax({
 });
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(19);

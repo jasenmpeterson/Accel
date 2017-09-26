@@ -26,8 +26,10 @@ $applications_background = get_field('applications_background', $page_id);
 
 // How it works
 $how_it_works = get_field('how_it_works', $page_id);
-// print_r($how_it_works);
 
+// Comparison Table
+$comparison_table = get_field('comparison_table', $page_id);
+//  print_r($comparison_table);
 ?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>
@@ -129,7 +131,7 @@ $how_it_works = get_field('how_it_works', $page_id);
 	<div class="how-it-works">
 		<div class="row">
 			<div class="small-12 column text-center">
-				<h6><?php echo $how_it_works[0]['title']; ?></h6>
+				<h6 class="section-title"><?php echo $how_it_works[0]['title']; ?></h6>
 			</div>
 		</div>
 		<div class="row">
@@ -138,15 +140,15 @@ $how_it_works = get_field('how_it_works', $page_id);
 					<div class="small-12"><h4><?php echo $how_it_works[1]['title']; ?></h4></div>
 					<?php
 					foreach($how_it_works[1]['tools'] as $tool):
-						echo '<div class="small-12 medium-4 tools-needed">'.$tool['content'].'</div>';
+						echo '<div class="small-12 medium-4 tools-needed"><img src="'.$tool['icon']['url'].'">'.$tool['content'].'</div>';
 					endforeach;
 					?>
 				</div>
 				<div class="row">
-					<div class="small-12"><h4><?php echo $how_it_works[2]['title']; ?></h4></div>
+					<div class="small-12 preparation-steps-title"><h4><?php echo $how_it_works[2]['title']; ?></h4></div>
 					<?php
 					foreach($how_it_works[2]['preparation_steps'] as $step):
-						echo '<div class="small-12">'.$step['content'].'</div>';
+						echo '<div class="small-12 preparation-steps"><img src="'.$step['icon']['url'].'"><div>'.$step['content'].'</div></div>';
 					endforeach;
 					?>
 				</div>
@@ -156,8 +158,48 @@ $how_it_works = get_field('how_it_works', $page_id);
 				<?php
 				$i = 1;
 				foreach($how_it_works[3]['steps'] as $step):
-					echo '<div class="step"><div class="box"><div class="count"><span>'.$i++.'</span></div><div>'.$step['content'].'</div></div></div>';
+					echo '<div class="step"><div class="box"><div class="count"><span>'.$i++.'</span></div><div class="set-flex"><img src="'.$step['icon']['url'].'"><div>'.$step['content'].'</div></div></div></div>';
 				endforeach;
+				?>
+			</div>
+		</div>
+	</div>
+
+	<div class="comparison-table">
+		<div class="row">
+			<div class="small-12 column text-center">
+				<h6 class="section-title"><?php echo $comparison_table[0]['title']; ?></h6>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 column">
+				<?php
+				if ($comparison_table[0]['table']):
+					if($comparison_table[0]['table']['header']) {
+						echo '<table>';
+						echo '<thead>';
+						echo '<tr>';
+						foreach($comparison_table[0]['table']['header'] as $th):
+							echo '<th>';
+							echo $th['c'];
+							echo '</th>';
+						endforeach;
+						echo '</tr>';
+						echo '</thead>';
+						echo '<tbody>';
+						foreach($comparison_table[0]['table']['body'] as $tr):
+							echo '<tr>';
+							foreach($tr as $td):
+								echo '<td>';
+								echo $td['c'];
+								echo '</td>';
+							endforeach;
+							echo '</tr>';
+						endforeach;
+						echo '</tbody>';
+						echo '</table>';
+					}
+				endif;
 				?>
 			</div>
 		</div>
