@@ -24,6 +24,10 @@ $applications_title = get_field('applications_title', $page_id);
 $applications = get_field('applications', $page_id);
 $applications_background = get_field('applications_background', $page_id);
 
+// How it works
+$how_it_works = get_field('how_it_works', $page_id);
+// print_r($how_it_works);
+
 ?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>
@@ -48,61 +52,63 @@ $applications_background = get_field('applications_background', $page_id);
 	</nav>
 </section>
 
-<div class="main-wrap full-width" role="main">
+<div class="about-wrap">
+	<div class="main-wrap full-width" role="main">
 
-<?php do_action( 'foundationpress_before_content' ); ?>
+		<?php do_action( 'foundationpress_before_content' ); ?>
 
-	<?php
-	foreach ($about_section as $about):
-		?>
+		<?php
+		foreach ($about_section as $about):
+			?>
 
-		<div class="row align-middle">
-			<div class="small-12 medium-6 columns">
-				<img data-interchange="[<?php echo $about['about_image']['sizes']['fp-small']; ?>, small], [<?php echo $about['about_image']['sizes']['fp-medium']; ?>, medium], [<?php echo $about['about_image']['sizes']['fp-large']; ?>, large], [<?php echo $about['about_image']['sizes']['fp-xlarge']; ?>, xlarge]"  alt="<?php echo $about['about_image']['alt']; ?>"/>
-			</div>
-			<div class="small-12 medium-6 large-5 columns">
-				<?php echo $about['content']; ?>
-				 <?php
+			<div class="row align-middle">
+				<div class="small-12 medium-6 columns">
+					<img data-interchange="[<?php echo $about['about_image']['sizes']['fp-small']; ?>, small], [<?php echo $about['about_image']['sizes']['fp-medium']; ?>, medium], [<?php echo $about['about_image']['sizes']['fp-large']; ?>, large], [<?php echo $about['about_image']['sizes']['fp-xlarge']; ?>, xlarge]"  alt="<?php echo $about['about_image']['alt']; ?>"/>
+				</div>
+				<div class="small-12 medium-6 large-5 columns">
+					<?php echo $about['content']; ?>
+					<?php
 					if ($about['specifications']):
 						if($about['specifications']['header']) {
 							echo '<table>';
-								echo '<thead>';
-									echo '<tr>';
-										foreach($about['specifications']['header'] as $th):
-											echo '<th>';
-												echo $th['c'];
-											echo '</th>';
-										endforeach;
-									echo '</tr>';
-								echo '</thead>';
-								echo '<tbody>';
-									foreach($about['specifications']['body'] as $tr):
-										echo '<tr>';
-											foreach($tr as $td):
-												echo '<td>';
-													echo $td['c'];
-												echo '</td>';
-											endforeach;
-										echo '</tr>';
-									endforeach;
-								echo '</tbody>';
+							echo '<thead>';
+							echo '<tr>';
+							foreach($about['specifications']['header'] as $th):
+								echo '<th>';
+								echo $th['c'];
+								echo '</th>';
+							endforeach;
+							echo '</tr>';
+							echo '</thead>';
+							echo '<tbody>';
+							foreach($about['specifications']['body'] as $tr):
+								echo '<tr>';
+								foreach($tr as $td):
+									echo '<td>';
+									echo $td['c'];
+									echo '</td>';
+								endforeach;
+								echo '</tr>';
+							endforeach;
+							echo '</tbody>';
 							echo '</table>';
 						}
 					endif;
-				 ?>
-				<a class="data-sheet-button-container" href="<?php echo $about['data_sheet']; ?>">
-					<div><img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/icons/data_sheet_icon.svg" alt=""></div>
-					<div class="data-sheet-button">Download Technical Data Sheet</div>
-				</a>
+					?>
+					<a class="data-sheet-button-container" href="<?php echo $about['data_sheet']; ?>">
+						<div><img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/icons/data_sheet_icon.svg" alt=""></div>
+						<div class="data-sheet-button">Download Technical Data Sheet</div>
+					</a>
+				</div>
 			</div>
-		</div>
 
-		<?php
-	endforeach;
-	?>
+			<?php
+		endforeach;
+		?>
 
-<?php do_action( 'foundationpress_after_content' ); ?>
+		<?php do_action( 'foundationpress_after_content' ); ?>
 
+	</div>
 </div>
 
 	<div class="applications" data-interchange="[<?php echo $applications_background ?>, small], [<?php echo $applications_background; ?>, medium], [<?php echo $applications_background; ?>, large], [<?php echo $applications_background; ?>, xlarge]">
@@ -116,6 +122,43 @@ $applications_background = get_field('applications_background', $page_id);
 					endforeach;
 					?>
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="how-it-works">
+		<div class="row">
+			<div class="small-12 column text-center">
+				<h6><?php echo $how_it_works[0]['title']; ?></h6>
+			</div>
+		</div>
+		<div class="row">
+			<div class="small-12 medium-6 columns">
+				<div class="row">
+					<div class="small-12"><h4><?php echo $how_it_works[1]['title']; ?></h4></div>
+					<?php
+					foreach($how_it_works[1]['tools'] as $tool):
+						echo '<div class="small-12 medium-4 tools-needed">'.$tool['content'].'</div>';
+					endforeach;
+					?>
+				</div>
+				<div class="row">
+					<div class="small-12"><h4><?php echo $how_it_works[2]['title']; ?></h4></div>
+					<?php
+					foreach($how_it_works[2]['preparation_steps'] as $step):
+						echo '<div class="small-12">'.$step['content'].'</div>';
+					endforeach;
+					?>
+				</div>
+			</div>
+			<div class="small-12 medium-6 columns steps">
+				<h4><?php echo $how_it_works[3]['title']; ?></h4>
+				<?php
+				$i = 1;
+				foreach($how_it_works[3]['steps'] as $step):
+					echo '<div class="step"><div class="box"><div class="count"><span>'.$i++.'</span></div><div>'.$step['content'].'</div></div></div>';
+				endforeach;
+				?>
 			</div>
 		</div>
 	</div>

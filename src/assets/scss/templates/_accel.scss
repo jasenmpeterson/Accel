@@ -5,6 +5,12 @@ h2 {
   letter-spacing: -2px;
 }
 
+@media print, screen and (min-width: 40em) {
+  h5 {
+    font-size: 1rem;
+  }
+}
+
 // Links
 
 a {
@@ -131,6 +137,12 @@ table thead th {
   padding-left: 0;
 }
 
+// About Wrap
+
+.about-wrap {
+  background: url('../images/sand.png') no-repeat bottom -325px right;
+}
+
 // Data Sheet Button
 
 .data-sheet-button-container {
@@ -159,7 +171,7 @@ table thead th {
 .applications {
   -webkit-background-size: cover !important;
   background-size: cover !important;
-  margin: 2.5rem 0;
+  margin-bottom: 2.5rem;
   padding: 6rem 0;
 }
 .applications p {
@@ -194,6 +206,127 @@ table thead th {
   }
 }
 
+// How it works
+
+.how-it-works {
+  width: 70rem;
+  margin: 0 auto;
+  max-width: 100%;
+}
+.how-it-works .row .row {
+  margin: 0;
+}
+.how-it-works h4 {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.how-it-works h5 {
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.how-it-works p {
+  font-size: .8rem;
+}
+.tools-needed p {
+  text-transform: uppercase;
+}
+.step {
+  position: relative;
+}
+.step p {
+  margin-bottom: 0;
+}
+.steps .step:nth-of-type(1) .box {
+  padding-top: 1rem;
+}
+.steps .step:nth-of-type(3) .box {
+  padding-bottom: 1rem;
+}
+.steps .step:nth-of-type(1):after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  left: -1.5rem;
+  top: 0;
+  background-color: #000;
+}
+.steps .step:nth-of-type(3):after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  left: -1.5rem;
+  bottom: 0;
+  background-color: #000;
+}
+.steps .step:nth-of-type(1):before,
+.steps .step:nth-of-type(2):before,
+.steps .step:nth-of-type(3):before {
+   content: '';
+   width: 2px;
+   height: 100%;
+   background-color: #000;
+   display: block;
+   left: -1.5rem;
+   position: absolute;
+ }
+.steps .step:nth-of-type(6):before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  background-color: #000;
+  display: block;
+  left: -1.5rem;
+  position: absolute;
+}
+.steps .step:nth-of-type(5) .box {
+  padding: 0;
+}
+.steps .step:nth-of-type(6) .box {
+  padding: 1.2rem 0;
+}
+.steps .step:nth-of-type(6) .box:before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  left: -1.5rem;
+  top: 0;
+  background-color: #000;
+}
+.steps .step:nth-of-type(6):after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  left: -1.5rem;
+  bottom: 0;
+  background-color: #000;
+}
+.step .box {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.2rem;
+}
+.step .count {
+  border-radius:50%;
+  width: 2rem;
+  height: 2rem;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+.step .count span {
+  display: block;
+}
 // Footer
 
 .footer-container {
