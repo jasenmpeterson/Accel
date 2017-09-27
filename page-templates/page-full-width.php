@@ -28,8 +28,25 @@ $applications_background = get_field('applications_background', $page_id);
 $how_it_works = get_field('how_it_works', $page_id);
 
 // Comparison Table
+
 $comparison_table = get_field('comparison_table', $page_id);
-//  print_r($comparison_table);
+
+// About Fairmont
+
+$about_fairmount = get_field('about_fairmont_santrol', $page_id);
+
+// Industrial and Recreational
+
+$industrial = get_field('industrial_and_recreational', $page_id);
+
+// Contact
+
+$contact = get_field('contact', $page_id);
+
+// Footer logo
+
+$footer_logo = get_field('footer_logo', $page_id);
+
 ?>
 
 <?php get_template_part( 'template-parts/featured-image' ); ?>
@@ -204,5 +221,60 @@ $comparison_table = get_field('comparison_table', $page_id);
 			</div>
 		</div>
 	</div>
+
+	<div class="about-santrol">
+		<div class="row">
+			<div class="small-12 medium-6 columns no-column-padding">
+				<div class="background-image" data-interchange="[<?php echo $about_fairmount[0]['image']['sizes']['fp-small']; ?>, small], [<?php echo $about_fairmount[0]['image']['sizes']['fp-medium']; ?>, medium], [<?php echo $about_fairmount[0]['image']['sizes']['fp-large']; ?>, large], [<?php echo $about_fairmount[0]['image']['sizes']['fp-xlarge'];?>, xlarge">
+				</div>
+			</div>
+			<div class="small-12 medium-6 columns no-column-padding">
+				<div class="about-santrol-header-content-wrap">
+					<h6><?php echo $about_fairmount[0]['title']; ?></h6>
+				</div>
+				<div class="about-santrol-content-wrap">
+					<?php echo $about_fairmount[0]['content']; ?>
+					<div class="logo-wrap">
+						<img src="<?php echo $about_fairmount[0]['logo']['url']; ?>" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="industrial">
+		<div class="row">
+			<div class="small-12 medium-6 column">
+				<?php echo $industrial[0]['content']; ?>
+			</div>
+		</div>
+		<div class="row align-center">
+			<?php
+				foreach($industrial[0]['products'] as $product):
+					echo '<div class="small-12 medium-3 columns"><a href="'.$product['page_link'].'" target="_blank" data-interchange="['.$product['image']['sizes']['fp-small'].', small],['.$product['image']['sizes']['fp-medium'].', medium],['.$product['image']['sizes']['fp-large'].', large],['.$product['image']['sizes']['fp-xlarge'].', xlarge]"><div class="product-wrap" >'.$product['title'].'</div></a></div>';
+				endforeach;
+			?>
+		</div>
+	</div>
+
+	<div class="contact">
+		<div class="row align-center">
+			<div class="small-12 medium-4 columns">
+				<?php echo $contact[0]['content']; ?>
+			</div>
+			<div class="small-12 medium-6 columns">
+				<h6><?php echo $contact[0]['contact_form_title']; ?></h6>
+				<?php echo do_shortcode('[contact-form-7 id="127" title="Contact form 1"]'); ?>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer-logo">
+		<div class="row">
+			<div class="small-12 column">
+				<img src="<?php echo $footer_logo; ?>" alt="">
+			</div>
+		</div>
+	</footer>
 
 <?php get_footer();
