@@ -165,7 +165,7 @@ $footer_logo = get_field('footer_logo', $page_id);
 					<div class="small-12 preparation-steps-title"><h4><?php echo $how_it_works[2]['title']; ?></h4></div>
 					<?php
 					foreach($how_it_works[2]['preparation_steps'] as $step):
-						echo '<div class="small-12 preparation-steps"><img src="'.$step['icon']['url'].'"><div>'.$step['content'].'</div></div>';
+						echo '<div class="small-12 preparation-steps"><div class="set-flex"><img src="'.$step['icon']['url'].'"><div>'.$step['content'].'</div></div></div>';
 					endforeach;
 					?>
 				</div>

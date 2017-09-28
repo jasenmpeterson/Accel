@@ -19,7 +19,7 @@ $(document).ready(function(){
 
   // Scroll To
   $(function() {
-    $('.dropdown.menu li a').click(function(e){
+    $('.dropdown.menu li a, .mobile-off-canvas-menu a').click(function(e){
       e.preventDefault();
       var curr_section = $(e.target).text();
       var scrollTop     = $(window).scrollTop()

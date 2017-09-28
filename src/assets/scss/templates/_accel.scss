@@ -141,6 +141,7 @@ table thead th {
 
 .about-wrap {
   background: url('../images/sand.png') no-repeat bottom -325px right;
+  padding: 0 2rem;
 }
 
 // Data Sheet Button
@@ -172,7 +173,7 @@ table thead th {
   -webkit-background-size: cover !important;
   background-size: cover !important;
   margin-bottom: 2.5rem;
-  padding: 6rem 0;
+  padding: 6rem 2rem;
 }
 .applications p {
   color: $white;
@@ -186,9 +187,6 @@ table thead th {
 }
 .applications p:last-of-type {
   margin-bottom: 0;
-}
-.applications-wrap {
-  width: 30%;
 }
 .applications h6 {
   background-color: rgba(44,44,44,.6);
@@ -213,7 +211,7 @@ table thead th {
   margin: 0 auto;
   max-width: 100%;
   color: $medium-black;
-  padding: 6rem 0;
+  padding: 6rem 2rem;
 }
 .how-it-works .section-title {
   color: $dark-blue;
@@ -345,13 +343,14 @@ table thead th {
 .step img {
   width: 100px;
 }
-.step .box div.set-flex  {
+div.set-flex  {
   display: inline-flex;
   align-items: center;
   width: 90%;
 }
-.step .box div.set-flex div {
+div.set-flex div {
   margin-left: 1rem;
+  padding: 0 2rem;
 }
 .tools-needed {
   text-align: center;
@@ -365,22 +364,18 @@ table thead th {
 .preparation-steps img {
   width: 100px;
 }
-.preparation-steps div {
-  display: inline-block;
-  margin-left: 1rem
-}
 .preparation-steps-title {
   margin-top: 5rem;
 }
 .comparison-table {
-  padding: 6rem 0;
+  padding: 6rem 2rem;
   width: 70rem;
   margin: 0 auto;
   max-width: 100%;
 }
 .comparison-table h6 {
   color: $dark-blue;
-  margin-bottom: 6rem;
+  margin-bottom: 6rem
 }
 .comparison-table th {
   color: #5D5D5D;
@@ -399,6 +394,9 @@ table thead th {
 }
 .about-santrol {
   padding: 6rem 0;
+}
+.about-santrol .row {
+  max-width: 100%;
 }
 .about-santrol h6 {
   color: $dark-blue;
@@ -419,6 +417,9 @@ table thead th {
 }
 .logo-wrap {
   text-align: right;
+}
+.industrial {
+  padding: 0 2rem;
 }
 .industrial h6 {
   color: $dark-blue;
@@ -459,11 +460,12 @@ table thead th {
   color: $dark-blue;
 }
 .contact {
-  padding: 6rem 0;
+  padding: 6rem 2rem;
   width: 70rem;
   margin: 0 auto;
   max-width: 100%;
 }
+
 [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
   background-color: #F4F4F4;
   font-size: .9rem;
@@ -480,7 +482,7 @@ table thead th {
 :-moz-placeholder { /* Firefox 18- */
   color: #A7A7A7;
 }
-[type='submit'], [type='button'] {
+.contact [type='submit'], .contact [type='button'] {
   border: none;
   display: block;
   background-color: $gold;
@@ -490,7 +492,7 @@ table thead th {
   transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
   padding: .8rem 0;
 }
-[type='submit']:hover, [type='button']:hover {
+.contact [type='submit']:hover, .contact [type='button']:hover {
   background-color: $dark-blue;
   cursor: pointer;
 }
@@ -500,10 +502,103 @@ table thead th {
   max-width: 100%;
 }
 .footer-logo img {
-  width: 20rem;
+  width: 30rem;
+  padding: 5rem;
+  display: block;
+  margin: 0 auto;
 }
 // Footer
 
 .footer-container {
   border-top: none
 }
+
+@media screen and (max-width: 1280px) {
+  .top-bar .menu a {
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  .top-bar .menu > li:not(.menu-text) > a {
+    padding: .8rem;
+  }
+  .top-bar .top-bar-title a svg {
+    width: 140px;
+  }
+  .featured-hero h1 {
+    font-size: 4.5625rem;
+  }
+  .grouped-sandbags {
+    width: 800px;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+  table,
+  .data-sheet-button-container {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .top-bar .menu a {
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  .top-bar .menu > li:not(.menu-text) > a {
+    padding: .4rem;
+  }
+  .top-bar .top-bar-title a svg {
+    width: 100px;
+  }
+  .featured-hero h1 {
+    font-size: 4.5625rem;
+  }
+  .grouped-sandbags {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .desktop-menu, .site-navigation .top-bar-left {
+    display: none !important;
+  }
+  h5 {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .how-it-works h4,
+  .about-wrap h4 {
+    text-align: center;
+    margin: 1rem 0 3rem 0;
+  }
+  .how-it-works .medium-6,
+  .about-wrap .medium-6 {
+      -webkit-flex: 0 0 100%;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+  .about-wrap img {
+    width: 20rem;
+    margin: 0 auto;
+    display: block;
+  }
+  table td {
+    font-size: 0.8rem !important;
+  }
+}
+
+//.small-12 {
+//  -webkit-flex: 0 0 100%;
+//  -ms-flex: 0 0 100%;
+//  flex: 0 0 100%;
+//  max-width: 100%;
+//}

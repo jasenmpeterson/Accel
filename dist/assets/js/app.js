@@ -12444,7 +12444,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
   // Scroll To
   (0, _jquery2.default)(function () {
-    (0, _jquery2.default)('.dropdown.menu li a').click(function (e) {
+    (0, _jquery2.default)('.dropdown.menu li a, .mobile-off-canvas-menu a').click(function (e) {
       e.preventDefault();
       var curr_section = (0, _jquery2.default)(e.target).text();
       var scrollTop = (0, _jquery2.default)(window).scrollTop();
