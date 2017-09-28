@@ -12427,6 +12427,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 (0, _jquery2.default)(document).ready(function () {
 
+  // Sticky Header
+
   (0, _jquery2.default)(function () {
     // Check the initial Poistion of the Sticky Header
     var stickyHeaderTop = (0, _jquery2.default)('.secondary-nav').offset().top;
@@ -12437,6 +12439,32 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
       } else {
         (0, _jquery2.default)('.secondary-nav').css({ position: 'static', top: '0px' });
       }
+    });
+  });
+
+  // Scroll To
+  (0, _jquery2.default)(function () {
+    (0, _jquery2.default)('.dropdown.menu li a').click(function (e) {
+      e.preventDefault();
+      var curr_section = (0, _jquery2.default)(e.target).text();
+      var scrollTop = (0, _jquery2.default)(window).scrollTop();
+      var elementOffset = (0, _jquery2.default)('[data-section="' + curr_section + '"]').offset().top;
+      var distance = elementOffset - scrollTop - 215;
+      console.log(distance);
+      window.scrollBy({
+        top: distance,
+        left: 0,
+        behavior: 'smooth'
+      });
+    });
+    (0, _jquery2.default)('.logo-container').click(function (e) {
+      e.preventDefault();
+      console.log('clicked');
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
     });
   });
 });
