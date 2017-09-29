@@ -565,17 +565,31 @@ div.set-flex div {
 }
 
 @media screen and (max-width: 1025px) {
-  .desktop-menu, .site-navigation .top-bar-left {
-    display: none !important;
-  }
+
   h5 {
     font-size: 0.9rem;
   }
+  .top-bar .top-bar-title a p {
+    margin-left: 1rem;
+  }
+
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 965px) {
+
+  .top-bar .top-bar-title a p {
+    font-size: 0.5rem;
+  }
+  .top-bar .menu > li:not(.menu-text) > a {
+    padding: 0.4rem;
+    font-size: 0.7rem;
+  }
+  .how-it-works {
+    padding-bottom: 0;
+  }
   .how-it-works h4,
-  .about-wrap h4 {
+  .about-wrap h4,
+  .main-wrap h2 {
     text-align: center;
     margin: 1rem 0 3rem 0;
   }
@@ -586,6 +600,15 @@ div.set-flex div {
       flex: 0 0 100%;
       max-width: 100%;
   }
+  .preparation-steps-title {
+    margin-top: 2rem;
+  }
+  .applications {
+    margin-bottom: 0;
+  }
+  .comparison-table {
+    padding-bottom: 0;
+  }
   .about-wrap img {
     width: 20rem;
     margin: 0 auto;
@@ -593,6 +616,42 @@ div.set-flex div {
   }
   table td {
     font-size: 0.8rem !important;
+  }
+  .main-wrap {
+    padding-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .top-bar .menu > li:not(.menu-text) > a {
+    padding: 0.2rem;
+  }
+  .top-bar .top-bar-title a p {
+    margin-left: 0.4rem;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .desktop-menu, .site-navigation .top-bar-left {
+    display: none !important;
+  }
+  .mobile-menu, .site-title-bar {
+    display: block !important;
+  }
+  .featured-hero h1 {
+    font-size: 3.5625rem;
+  }
+  .secondary-nav {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  h2 {
+    font-size: 2rem;
+  }
+  .applications p {
+    font-size: 1.2rem;
   }
 }
 

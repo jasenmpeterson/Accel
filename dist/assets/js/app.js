@@ -12466,6 +12466,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         behavior: 'smooth'
       });
     });
+    (0, _jquery2.default)('.mobile-off-canvas-menu a').click(function (e) {
+      e.preventDefault();
+      (0, _jquery2.default)('.mobile-off-canvas-menu').foundation('close');
+    });
   });
 });
 

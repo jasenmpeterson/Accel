@@ -41,6 +41,10 @@ $(document).ready(function(){
         behavior: 'smooth'
       })
     })
+    $('.mobile-off-canvas-menu a').click(function(e){
+      e.preventDefault();
+      $('.mobile-off-canvas-menu').foundation('close')
+    })
   })
 
 })
