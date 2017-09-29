@@ -251,7 +251,7 @@ $footer_logo = get_field('footer_logo', $page_id);
 		<div class="row align-center">
 			<?php
 				foreach($industrial[0]['products'] as $product):
-					echo '<div class="small-12 medium-3 columns"><a href="'.$product['page_link'].'" target="_blank" data-interchange="['.$product['image']['sizes']['fp-small'].', small],['.$product['image']['sizes']['fp-medium'].', medium],['.$product['image']['sizes']['fp-large'].', large],['.$product['image']['sizes']['fp-xlarge'].', xlarge]"><div class="product-wrap" >'.$product['title'].'</div></a></div>';
+					echo '<div class="small-12 medium-3 columns"><span data-interchange="['.$product['image']['sizes']['fp-small'].', small],['.$product['image']['sizes']['fp-medium'].', medium],['.$product['image']['sizes']['fp-large'].', large],['.$product['image']['sizes']['fp-xlarge'].', xlarge]"><div class="product-wrap" >'.$product['title'].'</div></span></div>';
 				endforeach;
 			?>
 		</div>

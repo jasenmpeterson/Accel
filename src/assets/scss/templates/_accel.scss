@@ -424,7 +424,7 @@ div.set-flex div {
 .industrial h6 {
   color: $dark-blue;
 }
-.industrial a {
+.industrial span {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -437,7 +437,7 @@ div.set-flex div {
   background-repeat: no-repeat !important;
   padding: 2rem;
   border-bottom: 6px solid $gold;
-  font-size: .8rem;
+  font-size: .8rem
 }
 .industrial .columns {
   margin-bottom: 1.875rem;
@@ -591,7 +591,7 @@ div.set-flex div {
   .about-wrap h4,
   .main-wrap h2 {
     text-align: center;
-    margin: 1rem 0 3rem 0;
+    margin: 1rem 0 1rem 0;
   }
   .how-it-works .medium-6,
   .about-wrap .medium-6 {
