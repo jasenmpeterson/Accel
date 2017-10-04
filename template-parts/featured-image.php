@@ -50,6 +50,14 @@ if ( has_post_thumbnail( $post->ID ) ) : ?>
 						<?php do_action( 'foundationpress_page_before_entry_content' ); ?>
 						<div class="entry-content">
 							<?php the_content(); ?>
+							<a href="#product" class="scroll-down-container">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="926.945 947.945 60.109 60.109" class="scroll--down">
+									<g transform="translate(811.5 954.5)">
+										<circle cx="28.055" cy="28.055" r="28.055" transform="translate(117.445 -4.555)"></circle>
+										<path d="M129.52 21.014l16.336 7.813 16.336-7.813"></path>
+									</g>
+								</svg>
+							</a>
 						</div>
 					</div>
 					<div class="small-12 column align-self-bottom">

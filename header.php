@@ -25,5 +25,5 @@
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
-	<section class="container">
+	<section class="container" id="home">
 		<?php do_action( 'foundationpress_after_header' );

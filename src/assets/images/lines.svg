@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="295 144.398 1357 1091.102"><defs><style>.a{fill:none;stroke:#e6e6e6;opacity:0.3;}</style></defs><line class="a" y2="1091.102" transform="translate(295.5 144.398)"/><line class="a" y2="1091.102" transform="translate(634.5 144.398)"/><line class="a" y2="1091.102" transform="translate(973.5 144.398)"/><line class="a" y2="1091.102" transform="translate(1312.5 144.398)"/><line class="a" y2="1091.102" transform="translate(1651.5 144.398)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1357 1091.1" shape-rendering="crispEdges">
+  <title>lines</title>
+  <line x1="0.5" x2="0.5" y2="1091.1" fill="none" stroke="#e6e6e6" opacity="0.3" style="isolation: isolate"/>
+  <line x1="339.5" x2="339.5" y2="1091.1" fill="none" stroke="#e6e6e6" opacity="0.3" style="isolation: isolate"/>
+  <line x1="678.5" x2="678.5" y2="1091.1" fill="none" stroke="#e6e6e6" opacity="0.3" style="isolation: isolate"/>
+  <line x1="1017.5" x2="1017.5" y2="1091.1" fill="none" stroke="#e6e6e6" opacity="0.3" style="isolation: isolate"/>
+  <line x1="1356.5" x2="1356.5" y2="1091.1" fill="none" stroke="#e6e6e6" opacity="0.3" style="isolation: isolate"/>
+</svg>

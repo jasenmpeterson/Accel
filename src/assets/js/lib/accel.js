@@ -10,37 +10,39 @@ $(document).ready(function(){
 
     $(window).scroll(function () {
       if ($(window).scrollTop() > stickyHeaderTop) {
-        $('.secondary-nav').css({position: 'fixed', top: '0px', width: '100%', zIndex: '10'});
+        $('.secondary-nav').addClass('sticky-nav');
       } else {
-        $('.secondary-nav').css({position: 'static', top: '0px'});
+        $('.secondary-nav').removeClass('sticky-nav');
       }
     });
   })
 
   // Scroll To
   $(function() {
-    $('.dropdown.menu li a, .mobile-off-canvas-menu a').click(function(e){
-      e.preventDefault();
-      var curr_section = $(e.target).text();
-      var scrollTop     = $(window).scrollTop()
-      var elementOffset = $('[data-section="'+curr_section+'"]').offset().top
-      var distance      = (elementOffset - scrollTop) - 215
-      console.log(distance)
-      window.scrollBy({
-        top: distance,
-        left: 0,
-        behavior: 'smooth'
-      })
-    })
-    $('.logo-container').click(function(e){
-      e.preventDefault();
-      console.log('clicked');
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      })
-    })
+    $('a[href*="#"]')
+    // Remove links that don't actually link to anything
+      .not('[href="#"]')
+      .not('[href="#0"]')
+      .click(function(event) {
+        // On-page links
+        if (
+          location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+          &&
+          location.hostname == this.hostname
+        ) {
+          // Figure out element to scroll to
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          // Does a scroll target exist?
+          if (target.length) {
+            // Only prevent default if animation is actually gonna happen
+            event.preventDefault();
+            $('html, body').animate({
+              scrollTop: target.offset().top - 100
+            }, 1000);
+          }
+        }
+      });
     $('.mobile-off-canvas-menu a').click(function(e){
       e.preventDefault();
       $('.mobile-off-canvas-menu').foundation('close')

@@ -57,6 +57,7 @@ a {
 .top-bar .menu > li:not(.menu-text) > a {
   padding-top: 0;
   padding-bottom: 0;
+  padding: .8rem;
 }
 
 // Featured Hero
@@ -66,7 +67,7 @@ a {
   position: relative;
 }
 .bg-lines {
-  background: url('../images/lines.svg');
+  background: url('../images/lines.svg') no-repeat center;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -109,6 +110,15 @@ a {
   padding: 2rem 0;
   transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
+
+.secondary-nav.sticky-nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
 .secondary-nav .top-bar .top-bar-title a {
   padding-top: 0;
   padding-bottom: 0;
@@ -117,6 +127,10 @@ a {
 
 .main-wrap h2 {
   color: $dark-blue;
+}
+
+.main-wrap .row {
+  width: 100%;
 }
 
 .main-wrap p {
@@ -164,7 +178,7 @@ table thead th {
   color: $white;
   font-weight: 700;
   padding: .5rem 1rem;
-  transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all .3s ease-in-out;
 }
 
 // Applications
@@ -403,10 +417,10 @@ div.set-flex div {
   margin: 0;
 }
 .about-santrol-content-wrap {
-  background: url('../images/BG.jpg') no-repeat;
+  background: $dark-blue;
   -webkit-background-size: cover;
   background-size: cover;
-  color: #005462;
+  color: #fff;
 }
 .about-santrol-header-content-wrap,
 .about-santrol-content-wrap {
@@ -424,7 +438,7 @@ div.set-flex div {
 .industrial h6 {
   color: $dark-blue;
 }
-.industrial span {
+.industrial a {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -437,7 +451,11 @@ div.set-flex div {
   background-repeat: no-repeat !important;
   padding: 2rem;
   border-bottom: 6px solid $gold;
-  font-size: .8rem
+  font-size: .8rem;
+  transition: opacity 600ms ease-out;
+}
+.industrial a:hover {
+  opacity: 0.5
 }
 .industrial .columns {
   margin-bottom: 1.875rem;
@@ -489,7 +507,7 @@ div.set-flex div {
   text-align: center;
   width: 100%;
   color: #fff;
-  transition: all 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all .3s ease-in-out;
   padding: .8rem 0;
 }
 .contact [type='submit']:hover, .contact [type='button']:hover {
@@ -513,13 +531,18 @@ div.set-flex div {
   border-top: none
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1380px) {
+  .top-bar .menu > li:not(.menu-text) > a {
+    padding: 0.3rem;
+    font-size: 0.8rem;
+  }
+  .top-bar .top-bar-title a p {
+    margin-left: 1rem;
+    font-size: 0.7rem;
+  }
   .top-bar .menu a {
     color: #fff;
     font-size: 0.9rem;
-  }
-  .top-bar .menu > li:not(.menu-text) > a {
-    padding: .8rem;
   }
   .top-bar .top-bar-title a svg {
     width: 140px;
@@ -550,9 +573,6 @@ div.set-flex div {
     color: #fff;
     font-size: 0.9rem;
   }
-  .top-bar .menu > li:not(.menu-text) > a {
-    padding: .4rem;
-  }
   .top-bar .top-bar-title a svg {
     width: 100px;
   }
@@ -575,7 +595,7 @@ div.set-flex div {
 
 }
 
-@media screen and (max-width: 965px) {
+@media screen and (max-width: 975px) {
 
   .top-bar .top-bar-title a p {
     font-size: 0.5rem;
@@ -622,16 +642,14 @@ div.set-flex div {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .top-bar .menu > li:not(.menu-text) > a {
     padding: 0.2rem;
   }
   .top-bar .top-bar-title a p {
     margin-left: 0.4rem;
   }
-}
 
-@media screen and (max-width: 760px) {
   .desktop-menu, .site-navigation .top-bar-left {
     display: none !important;
   }
@@ -642,7 +660,7 @@ div.set-flex div {
     font-size: 3.5625rem;
   }
   .secondary-nav {
-    display: none;
+    display: none
   }
 }
 
@@ -652,6 +670,50 @@ div.set-flex div {
   }
   .applications p {
     font-size: 1.2rem;
+  }
+}
+
+.scroll-down-container {
+  display: block;
+}
+
+.scroll--down {
+  width: 25px;
+  height: 25px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation: anim1 1.5s infinite;
+}
+.scroll--down:hover {
+  opacity: 0.5;
+}
+.scroll--down circle,
+.scroll--down path {
+  fill: none;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 4px
+}
+
+@keyframes anim1 {
+  0%
+  {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  75%
+  {
+    opacity: 1;
+  }
+  85%
+  {
+    opacity: 0.5;
+  }
+  100%
+  {
+    transform: translateY(20px);
+    opacity: 0;
   }
 }
 
